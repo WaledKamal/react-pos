@@ -1,0 +1,20 @@
+[
+  {
+    "id" :0,
+    "title": "StarBuck Latie",
+    "size": 200,
+    "proudctImage": "https://cdn.pixelbin.io/v2/dummy-cloudname/erase.bg(shadow:true)/__editor/__erase_bg/2022-8-21/starbucks-paper-cup-12-oz-2.webp?download=true",
+    "price": "3.00",
+    "category": "Hot Coffee",
+    "qty": 5
+  },
+  {
+    "id" :1,
+    "title": "Big Mac Tasty",
+    "size": null,
+    "proudctImage": "https://www.mcdonalds.eg/Cms_Data/Contents/En/Media/images/Menu/large-Image/Bigmac.png",
+    "price": "3.00",
+    "category": "Sandwiches",
+    "qty": 10
+  }
+]
