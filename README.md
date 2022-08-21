@@ -1,5 +1,5 @@
 # Store Point of Sale (under implementation)
- Desktop Point of Sale app built with electron 
+ Desktop Point of Sale app built with react 
  
   **Features:**
 
