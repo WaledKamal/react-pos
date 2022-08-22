@@ -5,53 +5,48 @@ import ProductsList from "./../../data/products.json";
 import NewOrder from "../orders/NewOrder";
 
 const Products = (props) => {
-  const [productsList, setproductsList] = useState([]);
   const [newOrder, setnewOrder] = useState(false);
-
-  const filterbyCategory = () => {
-    if (props.activeCategory == "All") {
-      setproductsList(ProductsList);
-    } else {
-      setproductsList(
-        ProductsList.filter((l) => l.category == props.activeCategory)
-      );
-    }
-  };
-
-  const filterbyKeyword = () => {
-    if (props.keyword == "") {
-      setproductsList(ProductsList);
-    } else {
-      setproductsList(
-        ProductsList.filter((l) =>
-          l.title?.toLowerCase().includes(props.keyword?.toLowerCase())
-        )
-      );
-    }
-  };
-
-  useEffect(() => {
-    filterbyCategory();
-  }, [props.activeCategory]);
-
-  useEffect(() => {
-    filterbyKeyword();
-  }, [props.keyword]);
-
+  const [currentOrder, setcurrentOrder] = useState({});
   return (
     <div className="products">
-      {productsList.map((l, i) => (
-        <Product onPress={()=> setnewOrder(true)} key={i} data={l}></Product>
+      {ProductsList.filter(
+        (l) =>
+          l.category == props.activeCategory ||
+          l.title?.toLowerCase().includes(props.keyword?.toLowerCase())
+      ).map((l, i) => (
+        <Product
+          onPress={() => {
+            setnewOrder(true);
+            setcurrentOrder(l);
+          }}
+          key={i}
+          data={l}
+        ></Product>
       ))}
-      {productsList.length < 1 ? (
+      {ProductsList.filter(
+        (l) =>
+          l.category == props.activeCategory ||
+          l.title?.toLowerCase().includes(props.keyword?.toLowerCase())
+      ).length < 1 ? (
         <div className="alert-empty">
-          Not <span style={{ color: "red" }}> {props.activeCategory}</span>{" "}
+          Not{" "}
+          <span style={{ color: "red" }}>
+            {" "}
+            {props.activeCategory || props.keyword}
+          </span>{" "}
           avalabile!
         </div>
       ) : (
         ""
       )}
-      {newOrder ? <NewOrder onClose={()=> setnewOrder(false)}></NewOrder> : ""}
+      {newOrder ? (
+        <NewOrder
+          currentOrder={currentOrder}
+          onClose={() => setnewOrder(false)}
+        ></NewOrder>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

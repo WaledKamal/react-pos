@@ -1,11 +1,13 @@
 import Button from "./Button";
 import { connect } from "react-redux";
+import { useState } from "react";
 const SearchBar = (props) => {
+  const [keyword, setkeyword] = useState("");
   return (
     <div className="search-bar">
       <input
         className="searchbar"
-        onChange={(e)=>props.search(e.target.value)}
+        onChange={(e) => setkeyword(e.target.value)}
         type={"text"}
         style={{
           backgroundColor: "white",
@@ -16,9 +18,13 @@ const SearchBar = (props) => {
           outline: "none",
         }}
         placeholder={props.placeholder}
-        onClick={props.onPress}
       ></input>
-      <Button height={"45px"} width={"120px"} title="Search" />
+      <Button
+        onPress={()=>props.search(keyword)}
+        height={"45px"}
+        width={"120px"}
+        title="Search"
+      />
     </div>
   );
 };
@@ -34,7 +40,5 @@ const mapDispatchToProps = (dispatch) => {
     search: (data) => dispatch({ type: actions[0].type, payload: data }),
   };
 };
-
-
 
 export default connect(null, mapDispatchToProps)(SearchBar);

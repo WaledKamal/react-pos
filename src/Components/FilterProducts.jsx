@@ -2,14 +2,9 @@ import { useState } from "react";
 import { connect } from "react-redux";
 
 const Filter = (props) => {
-
   const [activeCategory, setactiveCategory] = useState("All");
-
-  let filterButtons = [
-    {
-      category: "All",
-      icon: "grid-small",
-    },
+  const [filterButtons, setfilterButtons] = useState([
+   
     {
       category: "Hot Coffee",
       icon: "coffee",
@@ -27,7 +22,7 @@ const Filter = (props) => {
       category: "Sandwiches",
       icon: "baguette",
     },
-  ];
+  ]);
 
   return (
     <div className="filter">
@@ -49,8 +44,7 @@ const Filter = (props) => {
           <span>{l.category}</span>
         </button>
       ))}
-      ;
-    </div>
+      </div>
   );
 };
 
@@ -65,10 +59,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-
 const mapDispatchToProps = (dispatch) => {
   return {
-    modify: (data) => dispatch({type : action.type , payload : data}),
+    modify: (data) => dispatch({ type: action.type, payload: data }),
   };
 };
 

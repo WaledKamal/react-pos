@@ -1,20 +1,22 @@
 [
   {
     "id" :0,
-    "title": "StarBuck Latie",
+    "title": "Hot Black Coffee",
     "size": 200,
     "proudctImage": "https://cdn.pixelbin.io/v2/dummy-cloudname/erase.bg(shadow:true)/__editor/__erase_bg/2022-8-21/starbucks-paper-cup-12-oz-2.webp?download=true",
-    "price": "3.00",
+    "price": "2.70",
     "category": "Hot Coffee",
-    "qty": 5
+    "qty": 5,
+    "description" : "Roasted black java coffee, with a little pungent taste"
   },
   {
     "id" :1,
     "title": "Big Mac Tasty",
     "size": null,
     "proudctImage": "https://www.mcdonalds.eg/Cms_Data/Contents/En/Media/images/Menu/large-Image/Bigmac.png",
-    "price": "3.00",
+    "price": "3.90",
     "category": "Sandwiches",
-    "qty": 10
+    "qty": 10,
+    "description" : "Big Mc Tasty sandwich, layers of meat, cucumber, lettuce and tomato"
   }
 ]
