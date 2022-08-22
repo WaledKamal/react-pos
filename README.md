@@ -14,4 +14,4 @@
 - Transaction History. 
 - Filter Transactions by Till, Cashier or Status. 
 - Filter Transactions by Date Range. 
- 
+ ![alt text](perview.png)
